@@ -1,8 +1,4 @@
 (function () {
-  // console.log("rest API");
-  
-  // URL de l'API REST de WordPress
-  // let url = "https://gftnth00.mywhc.ca/tim09/wp-json/wp/v2/posts?categories=3";
   montrerParDefaut();
   let lien_categorie = document.querySelectorAll('.smth');
   console.log(lien_categorie);
@@ -14,15 +10,19 @@
     })
   }
 
-  function montrerParDefaut(params) {
+  function montrerParDefaut() {
     let url = `https://gftnth00.mywhc.ca/tim09/wp-json/wp/v2/posts?search=France`;
     fetch(url)
+    .then(function (response) {
+      if (!response.ok) {
+        throw new Error(
+          "La requête a échoué avec le statut " + response.status
+        );
+      }
+      return response.json();
+    })
     .then(function (data) {
-      // La variable "data" contient la réponse JSON
-      // console.log(data);
 	    let restapi = document.querySelector(".contenu__pays__restapi");
-      // Maintenant, vous pouvez traiter les données comme vous le souhaitez
-      // Par exemple, extraire les titres des articles comme dans l'exemple précédent
         restapi.innerHTML = "";
         data.forEach(function (article) {
           let titre = article.title.rendered;
@@ -37,33 +37,23 @@
           <p>${contenu}</p>
         </div>
         `;
-        // <p>${contenu}</p>
        restapi.appendChild(carte);
       });
     })
   }
   
-  // Effectuer la requête HTTP en utilisant fetch()
   function mon_fetch (url) {
     fetch(url)
-    // .then(function (response) {
-    //   // Vérifier si la réponse est OK (statut HTTP 200)
-    //   if (!response.ok) {
-    //     throw new Error(
-    //       "La requête a échoué avec le statut " + response.status
-    //     );
-    //   }
-
-    //   // Analyser la réponse JSON
-    //   return response.json();
-    //   // console.log(response.json());
-    // })
+    .then(function (response) {
+      if (!response.ok) {
+        throw new Error(
+          "La requête a échoué avec le statut " + response.status
+        );
+      }
+      return response.json();
+    })
     .then(function (data) {
-      // La variable "data" contient la réponse JSON
-      // console.log(data);
 	  let restapi = document.querySelector(".contenu__pays__restapi");
-      // Maintenant, vous pouvez traiter les données comme vous le souhaitez
-      // Par exemple, extraire les titres des articles comme dans l'exemple précédent
         restapi.innerHTML = "";
         data.forEach(function (article) {
           let titre = article.title.rendered;
@@ -84,24 +74,6 @@
     })
     .catch(function (error) {
     })};
-
-
-  // function fetchArticle(url){
-  //     fetch(url)
-  //     .then(function (response) {
-  //       // Vérifier si la réponse est OK (statut HTTP 200)
-  //       if (!response.ok) {
-  //         throw new Error(
-  //           "La requête a échoué avec le statut " + response.status
-  //         )
-  //         return response.json();
-  //       } 
-  //     })
-  //     .then(function (data) {
-	//       console.log(data);
-  //     })
-  //     .catch(function (error) {
-  // })};
 
 })();
 

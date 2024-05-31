@@ -15,12 +15,6 @@ Description: Permet d'afficher les destinations qui répondent à certains crit�
 echo header("Access-Control-Allow-Origin: https://localhost:8080");
 function emileb_enqueue()
 {
-// filemtime // retourne en milliseconde le temps de la dernière modification
-// plugin_dir_path // retourne le chemin du répertoire du plugin
-// __FILE__ // le fichier en train de s'exécuter
-// wp_enqueue_style() // Intègre le link:css dans la page
-// wp_enqueue_script() // intègre le script dans la page
-// wp_enqueue_scripts // le hook
 
 $version_css = filemtime(plugin_dir_path( __FILE__ ) . "style.css");
 $version_js = filemtime(plugin_dir_path(__FILE__) . "js/ef.js");
@@ -51,11 +45,6 @@ function creer_bouton_pays(){
 /* Création de la liste des destinations en HTML */
 function creation_destinations_pays(){
     $contenu = creer_bouton_pays() . '<div class="contenu__pays__restapi"></div>';
-    // $contenu = '<button class="bouton__ouvrir">Ouvrir</button>
-    // <button id="cat_3" class="lien__categorie">Aventure</button>
-    // <button id="cat_4" class="lien__categorie">Zen</button>
-    // <div class="contenu__restapi">
-    // </div>';
     return $contenu;
 }
 
