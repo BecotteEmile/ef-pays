@@ -9,6 +9,9 @@
   flex: 1 0 250px;
   margin-top: 1rem;
 }
+.restapi__carte h3 {
+  margin-bottom: 1rem;
+}
 
 .contenu_destination_pays {
   display: flex;
