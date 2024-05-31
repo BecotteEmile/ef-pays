@@ -44,7 +44,10 @@
           
         carte.innerHTML = `
         <h2>${titre}</h2>
-        <p>${contenu}</p>
+        <div class="contenu_destination_pays">
+          <img src="https://via.placeholder.com/150" alt="">
+          <p>${contenu}</p>
+        </div>
         `;
         // <p>${contenu}</p>
        restapi.appendChild(carte);

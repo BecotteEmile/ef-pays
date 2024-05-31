@@ -1,11 +1,8 @@
 .contenu__pays__restapi {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-  min-height: 50vh;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
 }
 
 .restapi__carte {
