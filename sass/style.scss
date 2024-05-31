@@ -7,4 +7,24 @@
 
 .restapi__carte{
     flex: 1 0 250px;
+    margin-top: 1rem;
+}
+
+
+.contenu_destination_pays{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    p{
+        max-width: 70vw;
+        margin-left: 1rem;
+    }
+
+    @media(max-width: 700px){
+        img{
+            display: none;
+        }
+    }
 }
