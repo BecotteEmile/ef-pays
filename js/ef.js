@@ -43,7 +43,7 @@
           carte.classList.add("restapi__carte");
           
         carte.innerHTML = `
-        <h2>${titre}</h2>
+        <h3>${titre}</h3>
         <div class="contenu_destination_pays">
           <img src="https://via.placeholder.com/150" alt="">
           <p>${contenu}</p>
