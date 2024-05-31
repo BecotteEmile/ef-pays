@@ -1,0 +1,13 @@
+.contenu__pays__restapi {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  min-height: 50vh;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.restapi__carte {
+  flex: 1 0 250px;
+}/*# sourceMappingURL=style.css.map */
