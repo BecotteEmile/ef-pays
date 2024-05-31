@@ -38,12 +38,20 @@ wp_enqueue_script(  'eb_plugin_ef_js',
 add_action('wp_enqueue_scripts', 'emileb_enqueue');
 
 function creer_bouton_pays(){
-    $lesCategories = ["France", "États-Unis", "Canada", "Argentine", "Chili", "Belgique", "Maroc", "Mexique", "Japon", "Italie", "Islande", "Chine", "Grèce", "Suisse"];
+    $lesCategoriesPays = ["France", "États-Unis", "Canada", "Argentine", "Chili", "Belgique", "Maroc", "Mexique", "Japon", "Italie", "Islande", "Chine", "Grèce", "Suisse"];
+    $lesCategories = get_categories();
     $contenu = '';
     foreach($lesCategories as $category){
-        $nomCat = $category;
-        $contenu = '<button id="'.$nomCat.'" class="smth">'.$nomCat.'</button>';
-        print_r($contenu);
+        print_r($category);
+        foreach ($lesCategoriesPays as $nom) {
+            print_r($nom);
+            if ($nom == $category->name) {
+                $nomCat = $category->name;
+                $idCat = $category->id;
+                $contenu = '<button id="'.$idCat.'" class="smth">'.$nomCat.'</button>';
+                print_r($contenu);
+            }   
+        }
     }
 }
 
